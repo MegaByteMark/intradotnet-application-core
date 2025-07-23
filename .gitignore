@@ -416,3 +416,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+intradotnet-application-core/bin
+intradotnet-application-core/obj
