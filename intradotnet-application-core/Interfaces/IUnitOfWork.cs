@@ -11,13 +11,13 @@ public interface IUnitOfWork : IDisposable, IAsyncDisposable
     /// </summary>
     /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
     /// <returns>A task that represents the asynchronous operation.</returns>
-    ValueTask<TTransaction> BeginTransactionAsync<TTransaction>(CancellationToken cancellationToken = default);
+    ValueTask<object> BeginTransactionAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Begins a new database transaction.
     /// </summary>
     /// <returns>The database transaction.</returns>
-    TTransaction BeginTransaction<TTransaction>();
+    object BeginTransaction();
 
     /// <summary>
     /// Asynchronously saves all changes made in this unit of work to the database.
