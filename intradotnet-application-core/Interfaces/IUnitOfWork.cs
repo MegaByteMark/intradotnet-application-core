@@ -41,4 +41,11 @@ public interface IUnitOfWork : IDisposable, IAsyncDisposable
     /// Resets the unit of work by disposing and recreating the context.
     /// </summary>
     void Reset();
+
+    /// <summary>
+    /// Gets a repository of the specified type.
+    /// </summary>
+    /// <typeparam name="TRepository">The type of the repository to retrieve.</typeparam>
+    /// <returns>An instance of the specified repository type.</returns>
+    TRepository GetRepository<TRepository>() where TRepository : class;
 }
